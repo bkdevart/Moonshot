@@ -15,6 +15,8 @@
 		CADE696F2615F12600269988 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = CADE696D2615F12600269988 /* missions.json */; };
 		CADE69722615F1A200269988 /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE69712615F1A200269988 /* Astronaut.swift */; };
 		CADE69752615F20500269988 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE69742615F20500269988 /* Bundle-Decodable.swift */; };
+		CADE69782615F45400269988 /* mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE69772615F45400269988 /* mission.swift */; };
+		CAF1EDF2261822EE0006FB84 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF1EDF1261822EE0006FB84 /* MissionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		CADE696D2615F12600269988 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		CADE69712615F1A200269988 /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 		CADE69742615F20500269988 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		CADE69772615F45400269988 /* mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mission.swift; sourceTree = "<group>"; };
+		CAF1EDF1261822EE0006FB84 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +69,10 @@
 				CA9BFC812615531600756157 /* Assets.xcassets */,
 				CADE696C2615F12600269988 /* astronauts.json */,
 				CADE69712615F1A200269988 /* Astronaut.swift */,
+				CAF1EDF1261822EE0006FB84 /* MissionView.swift */,
 				CADE69742615F20500269988 /* Bundle-Decodable.swift */,
 				CADE696D2615F12600269988 /* missions.json */,
+				CADE69772615F45400269988 /* mission.swift */,
 				CA9BFC862615531600756157 /* Info.plist */,
 				CA9BFC832615531600756157 /* Preview Content */,
 			);
@@ -156,6 +162,8 @@
 				CA9BFC802615531500756157 /* ContentView.swift in Sources */,
 				CA9BFC7E2615531500756157 /* MoonshotApp.swift in Sources */,
 				CADE69752615F20500269988 /* Bundle-Decodable.swift in Sources */,
+				CADE69782615F45400269988 /* mission.swift in Sources */,
+				CAF1EDF2261822EE0006FB84 /* MissionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
