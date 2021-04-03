@@ -17,6 +17,7 @@
 		CADE69752615F20500269988 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE69742615F20500269988 /* Bundle-Decodable.swift */; };
 		CADE69782615F45400269988 /* mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE69772615F45400269988 /* mission.swift */; };
 		CAF1EDF2261822EE0006FB84 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF1EDF1261822EE0006FB84 /* MissionView.swift */; };
+		CAF1EDF526182B710006FB84 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF1EDF426182B710006FB84 /* AstronautView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CADE69742615F20500269988 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		CADE69772615F45400269988 /* mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mission.swift; sourceTree = "<group>"; };
 		CAF1EDF1261822EE0006FB84 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		CAF1EDF426182B710006FB84 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				CADE696C2615F12600269988 /* astronauts.json */,
 				CADE69712615F1A200269988 /* Astronaut.swift */,
 				CAF1EDF1261822EE0006FB84 /* MissionView.swift */,
+				CAF1EDF426182B710006FB84 /* AstronautView.swift */,
 				CADE69742615F20500269988 /* Bundle-Decodable.swift */,
 				CADE696D2615F12600269988 /* missions.json */,
 				CADE69772615F45400269988 /* mission.swift */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAF1EDF526182B710006FB84 /* AstronautView.swift in Sources */,
 				CADE69722615F1A200269988 /* Astronaut.swift in Sources */,
 				CA9BFC802615531500756157 /* ContentView.swift in Sources */,
 				CA9BFC7E2615531500756157 /* MoonshotApp.swift in Sources */,
