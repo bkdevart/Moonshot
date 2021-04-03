@@ -31,28 +31,30 @@ struct MissionView: View {
                     
                     ForEach(self.astronauts, id: \.role) {
                         crewMember in
-                        HStack {
-                            Image(crewMember.astronaut.id)
-                                .resizable()
-                                .frame(width: 83, height: 60)
-                                .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
+                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
+                            HStack {
+                                Image(crewMember.astronaut.id)
+                                    .resizable()
+                                    .frame(width: 83, height: 60)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
+                                    
+                                        .overlay(Capsule()
+                                        .stroke(Color.primary, lineWidth: 1))
                                 
-                                    .overlay(Capsule()
-                                    .stroke(Color.primary, lineWidth: 1))
-                            
-                            VStack(alignment: .leading) {
+                                VStack(alignment: .leading) {
+                                    
+                                    Text(crewMember.astronaut.name)
+                                        .font(.headline)
+                                    
+                                    Text(crewMember.role)
+                                        .foregroundColor(.secondary)
+                                }
                                 
-                                Text(crewMember.astronaut.name)
-                                    .font(.headline)
-                                
-                                Text(crewMember.role)
-                                    .foregroundColor(.secondary)
+                                Spacer()
                             }
-                            
-                            Spacer()
+                            .padding(.horizontal)
+                            .foregroundColor(crewMember.role == "Commander" ? /*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/ : .black)
                         }
-                        .padding(.horizontal)
-                        .foregroundColor(crewMember.role == "Commander" ? /*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/ : .black)
                     }
                     
                     Spacer(minLength: 25)
