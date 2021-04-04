@@ -16,6 +16,7 @@ struct MissionView: View {
     let mission: Mission
     let astronauts: [CrewMember]
     
+    
     var body: some View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
@@ -25,6 +26,10 @@ struct MissionView: View {
                         .scaledToFit()
                         .frame(maxWidth: geometry.size.width * 0.7)
                         .padding(.top)
+                    
+                    Text(self.mission.formattedLaunchDate)
+                        .font(.headline)
+                        .padding()
                     
                     Text(self.mission.description)
                         .padding()
