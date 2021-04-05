@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct AstronautView: View {
-    struct CrewMemberMissions {
-        // TODO change these for where below
+    struct CrewMemberMission {
+        // see if this needs more to do join
         let id: Int
+        let name: Mission.CrewRole
     }
     
     let astronaut: Astronaut
-    let missions: [CrewMemberMissions]
+    let missions: [CrewMemberMission]
     
     var body: some View {
         GeometryReader { geometry in
@@ -29,7 +30,9 @@ struct AstronautView: View {
                         .padding()
                         .layoutPriority(1)
                     
-//                    ForEach(self.mission, id: \.role) {
+//                    ForEach(self.missions, id: \.id) {
+//                        mission in
+//                        Text(String(mission.id))
 //                    }
                 }
             }
@@ -40,11 +43,11 @@ struct AstronautView: View {
     init(astronaut: Astronaut, missions: [Mission]) {
         self.astronaut = astronaut
         
-        var matches = [CrewMemberMissions]()
+        var matches = [CrewMemberMission]()
         
         for mission in missions {
-            if let match = missions.first(where: { $0.id == mission.id}) {
-                matches.append(CrewMemberMissions(id: match.id))
+            if let match = missions.first(where: { CrewMemberMission.name == astronaut.id}) {
+                matches.append(CrewMemberMission(id: match.id))
             } else {
                 fatalError("Missing \(mission)")
             }
