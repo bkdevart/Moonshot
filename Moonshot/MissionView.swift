@@ -37,8 +37,8 @@ struct MissionView: View {
                     ForEach(self.astronauts, id: \.role) {
                         crewMember in
                         // compiler error may be due to how AstronautView is called
-                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, missions: self.mission)) {
                             HStack {
+                                NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
                                 Image(crewMember.astronaut.id)
                                     .resizable()
                                     .frame(width: 83, height: 60)
@@ -57,7 +57,7 @@ struct MissionView: View {
                                 }
                                 
                                 Spacer()
-                            }
+                                }
                             .padding(.horizontal)
                             .foregroundColor(crewMember.role == "Commander" ? /*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/ : .black)
                         }

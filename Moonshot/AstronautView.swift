@@ -8,14 +8,9 @@
 import SwiftUI
 
 struct AstronautView: View {
-    struct CrewMemberMission {
-        // see if this needs more to do join
-        let id: Int
-        let name: Mission.CrewRole
-    }
     
     let astronaut: Astronaut
-    let missions: [CrewMemberMission]
+    let crewMissions: [Mission]
     
     var body: some View {
         GeometryReader { geometry in
@@ -26,42 +21,41 @@ struct AstronautView: View {
                         .scaledToFit()
                         .frame(width: geometry.size.width)
                     
+                    ForEach(self.crewMissions, id: \.id) {
+                        mission in
+                        Text(String(mission.displayName))
+                    }
+                    .font(.headline)
+                    
                     Text(self.astronaut.description)
                         .padding()
                         .layoutPriority(1)
-                    
-//                    ForEach(self.missions, id: \.id) {
-//                        mission in
-//                        Text(String(mission.id))
-//                    }
                 }
             }
         }
         .navigationBarTitle(Text(astronaut.name), displayMode: .inline)
     }
     
-    init(astronaut: Astronaut, missions: [Mission]) {
+    init(astronaut: Astronaut) {
         self.astronaut = astronaut
+        let missions: [Mission] = Bundle.main.decode("missions.json")
         
-        var matches = [CrewMemberMission]()
+        var matches = [Mission]()
         
         for mission in missions {
-            if let match = missions.first(where: { CrewMemberMission.name == astronaut.id}) {
-                matches.append(CrewMemberMission(id: match.id))
-            } else {
-                fatalError("Missing \(mission)")
+            if mission.crew.contains(where: { $0.name == astronaut.id}) {
+                matches.append(mission)
             }
         }
         
-        self.missions = matches
+        self.crewMissions = matches
     }
 }
 
 struct AstronautView_Previews: PreviewProvider {
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
-    static let missions: [Mission] = Bundle.main.decode("missions.json")
-    
+
     static var previews: some View {
-        AstronautView(astronaut: astronauts[0], missions: missions)  // , mission: missions[0]
+        AstronautView(astronaut: astronauts[0])
     }
 }
