@@ -43,7 +43,7 @@ struct AstronautView: View {
         var matches = [Mission]()
         
         for mission in missions {
-            if mission.crew.contains(where: { $0.name == astronaut.id}) {
+            if mission.crew.contains(where: { $0.name == astronaut.id }) {
                 matches.append(mission)
             }
         }
