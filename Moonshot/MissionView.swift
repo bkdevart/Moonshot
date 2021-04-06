@@ -36,7 +36,6 @@ struct MissionView: View {
                     
                     ForEach(self.astronauts, id: \.role) {
                         crewMember in
-                        // compiler error may be due to how AstronautView is called
                             HStack {
                                 NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
                                 Image(crewMember.astronaut.id)

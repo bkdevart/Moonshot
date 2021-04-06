@@ -24,13 +24,22 @@ struct ContentView: View {
                     VStack(alignment: .leading) {
                         Text(mission.displayName)
                             .font(.headline)
-                        Text(showDate ? mission.formattedLaunchDate : "")
+                        if showDate {
+                            Text(mission.formattedLaunchDate)
+                        } else {
+                            ForEach(mission.crew, id: \.name) {
+                                astronaut in
+                                VStack {
+                                    Text(astronaut.name.localizedCapitalized)
+                                }
+                            }
+                        }
                     }
                 }
             }
             .navigationTitle("Moonshot")
             .toolbar {
-                Button(showDate ? "Date View" : "Crew View") {
+                Button(showDate ? "Crew View" : "Date View") {
                     self.showDate.toggle()
                 }
             }
