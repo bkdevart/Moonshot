@@ -35,6 +35,7 @@ struct ContentView: View {
                             }
                         }
                     }
+                    .accessibilityElement(children: .combine)
                 }
             }
             .navigationTitle("Moonshot")

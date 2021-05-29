@@ -20,6 +20,7 @@ struct AstronautView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: geometry.size.width)
+                        .accessibility(removeTraits: .isImage)
                     
                     ForEach(self.crewMissions, id: \.id) {
                         mission in

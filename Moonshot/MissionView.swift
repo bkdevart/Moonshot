@@ -26,6 +26,7 @@ struct MissionView: View {
                         .scaledToFit()
                         .frame(maxWidth: geometry.size.width * 0.7)
                         .padding(.top)
+                        .accessibility(removeTraits: .isImage)
                     
                     Text(self.mission.formattedLaunchDate)
                         .font(.headline)
@@ -38,24 +39,24 @@ struct MissionView: View {
                         crewMember in
                             HStack {
                                 NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
-                                Image(crewMember.astronaut.id)
-                                    .resizable()
-                                    .frame(width: 83, height: 60)
-                                    .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
+                                    Image(crewMember.astronaut.id)
+                                        .resizable()
+                                        .frame(width: 83, height: 60)
+                                        .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
+                                        
+                                            .overlay(Capsule()
+                                            .stroke(Color.primary, lineWidth: 1))
                                     
-                                        .overlay(Capsule()
-                                        .stroke(Color.primary, lineWidth: 1))
-                                
-                                VStack(alignment: .leading) {
+                                    VStack(alignment: .leading) {
+                                        
+                                        Text(crewMember.astronaut.name)
+                                            .font(.headline)
+                                        
+                                        Text(crewMember.role)
+                                            .foregroundColor(.secondary)
+                                    }
                                     
-                                    Text(crewMember.astronaut.name)
-                                        .font(.headline)
-                                    
-                                    Text(crewMember.role)
-                                        .foregroundColor(.secondary)
-                                }
-                                
-                                Spacer()
+                                    Spacer()
                                 }
                             .padding(.horizontal)
                             .foregroundColor(crewMember.role == "Commander" ? /*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/ : .black)
