@@ -4,6 +4,7 @@
 //
 //  Created by Brandon Knox on 4/2/21.
 //
+//Change project 8 (Moonshot) so that when you scroll down in MissionView the mission badge image gets smaller. It doesn’t need to shrink away to nothing – going down to maybe 80% is fine.
 
 import SwiftUI
 
@@ -21,12 +22,15 @@ struct MissionView: View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
                 VStack {
-                    Image(self.mission.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: geometry.size.width * 0.7)
-                        .padding(.top)
-                        .accessibility(removeTraits: .isImage)
+                    GeometryReader { geo in
+                        Image(self.mission.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(minWidth: geo.frame(in: .global).maxX,
+                                   minHeight: geo.frame(in: .global).maxY * 0.8)
+                            .padding(.top)
+                            .accessibility(removeTraits: .isImage)
+                    }
                     
                     Text(self.mission.formattedLaunchDate)
                         .font(.headline)
